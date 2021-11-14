@@ -18,7 +18,7 @@ const job = schedule.scheduleJob("0 0 * * * *", function () {
 });
 
 async function getFeedTweets() {
-  const path = `/users/${process.env.TWITTER_OBSERVER_USER_ID}/tweets?max_results=100&tweet.fields=created_at`;
+  const path = `/users/${process.env.TWITTER_OBSERVER_USER_ID}/tweets?max_results=30&tweet.fields=created_at`;
   try {
     const result = await axios.get(path);
 
