@@ -40,9 +40,7 @@ scoreRouter.get("/", async (req, res) => {
     const gpuName = req.query.name;
 
     if (!gpuName) {
-      const gpuPriceList = await GpuPrice.find({}).sort([
-        ["lastPrice", "descending"],
-      ]);
+      const gpuPriceList = await GpuPrice.find({}).sort([["_id", "ascending"]]);
       res.status(200).send(gpuPriceList);
       return;
     }

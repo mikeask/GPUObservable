@@ -5,7 +5,7 @@ const GpuPrice = require("../models/gpuPriceSchema");
 const rule = new schedule.RecurrenceRule();
 rule.second = 10;
 
-const job = schedule.scheduleJob("*/10 * * * * *", function () {
+const job = schedule.scheduleJob("0 0 * * * *", function () {
   axios.defaults.baseURL = process.env.TWITTER_BASE_URL;
   axios.defaults.headers.common = {
     Authorization: `Bearer ${process.env.TWITTER_BEARER_TOKEN}`,
